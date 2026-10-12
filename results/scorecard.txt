@@ -1,0 +1,13 @@
+     check_name      | planted | caught | missed | false_alarms | recall_pct | precision_pct 
+---------------------+---------+--------+--------+--------------+------------+---------------
+ AIS_GAP             |       5 |      5 |      0 |            0 |      100.0 |         100.0
+ BAD_CONTAINER_NO    |       5 |      5 |      0 |            0 |      100.0 |         100.0
+ DUPLICATE_EVENT     |      12 |     12 |      0 |            0 |      100.0 |         100.0
+ EVENT_AFTER_RECEIPT |       6 |      6 |      0 |            0 |      100.0 |         100.0
+ MISSING_MILESTONE   |       8 |      8 |      0 |            0 |      100.0 |         100.0
+ OUT_OF_ORDER        |       8 |      8 |      0 |            0 |      100.0 |         100.0
+ POSITION_JUMP       |       6 |      6 |      0 |            0 |      100.0 |         100.0
+ SPEED_UNIT_MS       |       3 |      3 |      0 |            0 |      100.0 |         100.0
+ UNKNOWN_LOCATION    |       6 |      6 |      0 |            0 |      100.0 |         100.0
+(9 rows)
+

@@ -1,0 +1,50 @@
+  carrier  | shipments | avg_departure_delay_h | avg_arrival_delay_h | pct_arriving_over_1_day_late 
+-----------+-----------+-----------------------+---------------------+------------------------------
+ CARRIER_A |       136 |                  13.5 |                18.9 |                         28.7
+ CARRIER_B |       169 |                  14.5 |                19.1 |                         29.0
+ CARRIER_C |       170 |                  14.3 |                20.2 |                         32.9
+ CARRIER_D |       148 |                  14.7 |                19.7 |                         32.4
+(4 rows)
+
+ predicted_when | predictions | mean_error_h | mean_abs_error_h | p90_abs_error_h 
+----------------+-------------+--------------+------------------+-----------------
+ at departure   |         623 |        -2.76 |             6.86 |           16.80
+ 25% of voyage  |         623 |        -2.20 |             4.98 |           11.60
+ 50% of voyage  |         623 |        -1.35 |             3.35 |            8.46
+ 75% of voyage  |         623 |        -0.68 |             1.69 |            3.77
+(4 rows)
+
+     route      | voyages | avg_transit_h | sd_transit_h 
+----------------+---------+---------------+--------------
+ CNSHA -> AEJEA |       4 |         218.9 |         19.8
+ AEJEA -> SGSIN |       7 |         202.1 |         17.0
+ SGSIN -> AEJEA |       4 |         195.8 |          9.9
+ MYPKG -> AEJEA |       4 |         180.9 |         15.0
+ INCOK -> CNSHA |       5 |         170.7 |          3.6
+ CNSHA -> INNSA |       6 |         170.5 |         15.7
+ INNSA -> CNSHA |       7 |         168.4 |         15.2
+ CNSHA -> INMAA |       4 |         168.1 |          8.6
+ CNSHA -> LKCMB |       7 |         164.5 |         15.5
+ LKCMB -> CNSHA |       8 |         161.9 |         11.3
+(10 rows)
+
+ locode |    name     | avg_export_dwell_days | avg_import_dwell_days 
+--------+-------------+-----------------------+-----------------------
+ AEJEA  | Jebel Ali   |                  3.04 |                  3.58
+ CNSHA  | Shanghai    |                  3.20 |                  3.51
+ INCOK  | Kochi       |                  3.00 |                  3.35
+ INMAA  | Chennai     |                  3.27 |                  3.27
+ INNSA  | Nhava Sheva |                  3.25 |                  3.56
+ LKCMB  | Colombo     |                  3.13 |                  3.43
+ MYPKG  | Port Klang  |                  3.11 |                  3.33
+ SGSIN  | Singapore   |                  3.14 |                  3.50
+(8 rows)
+
+  carrier  | median_latency_h | p95_latency_h | findings_per_100_shipments 
+-----------+------------------+---------------+----------------------------
+ CARRIER_A |             2.92 |          5.77 |                       11.1
+ CARRIER_B |             2.98 |          5.80 |                        5.1
+ CARRIER_C |             3.00 |          5.72 |                        6.6
+ CARRIER_D |             2.93 |          5.71 |                        4.5
+(4 rows)
+

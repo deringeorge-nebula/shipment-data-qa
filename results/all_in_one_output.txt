@@ -1,0 +1,52 @@
+psql:supabase_all_in_one.sql:19: NOTICE:  schema "shipqa" does not exist, skipping
+ setseed 
+---------
+ 
+(1 row)
+
+    table_name    | row_count 
+------------------+-----------
+ voyages          |       268
+ shipments        |       668
+ container_events |      4012
+ vessel_positions |      9318
+ eta_predictions  |      2672
+ injected_faults  |        59
+(6 rows)
+
+     check_name      | findings 
+---------------------+----------
+ AIS_GAP             |        5
+ BAD_CONTAINER_NO    |        5
+ DUPLICATE_EVENT     |       12
+ EVENT_AFTER_RECEIPT |        6
+ MISSING_MILESTONE   |        8
+ OUT_OF_ORDER        |        8
+ POSITION_JUMP       |        6
+ SPEED_UNIT_MS       |        3
+ UNKNOWN_LOCATION    |        6
+(9 rows)
+
+     check_name      | planted | caught | missed | false_alarms | recall_pct | precision_pct 
+---------------------+---------+--------+--------+--------------+------------+---------------
+ AIS_GAP             |       5 |      5 |      0 |            0 |      100.0 |         100.0
+ BAD_CONTAINER_NO    |       5 |      5 |      0 |            0 |      100.0 |         100.0
+ DUPLICATE_EVENT     |      12 |     12 |      0 |            0 |      100.0 |         100.0
+ EVENT_AFTER_RECEIPT |       6 |      6 |      0 |            0 |      100.0 |         100.0
+ MISSING_MILESTONE   |       8 |      8 |      0 |            0 |      100.0 |         100.0
+ OUT_OF_ORDER        |       8 |      8 |      0 |            0 |      100.0 |         100.0
+ POSITION_JUMP       |       6 |      6 |      0 |            0 |      100.0 |         100.0
+ SPEED_UNIT_MS       |       3 |      3 |      0 |            0 |      100.0 |         100.0
+ UNKNOWN_LOCATION    |       6 |      6 |      0 |            0 |      100.0 |         100.0
+(9 rows)
+
+                      test                      | result 
+------------------------------------------------+--------
+ ISO 6346 check digit, textbook example         | PASS
+ Great-circle distance, 1 degree = 60 nm        | PASS
+ All planted faults caught, no false alarms     | PASS
+ Analysis set excludes every faulty shipment    | PASS
+ Mutation tests: 5 new faults, each caught once | PASS
+ Mutations rolled back cleanly                  | PASS
+(6 rows)
+
